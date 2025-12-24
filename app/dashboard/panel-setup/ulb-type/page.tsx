@@ -1,0 +1,30 @@
+"use client"
+
+import { useState } from "react"
+import { ULBTypeTable } from "./ulbType-table"
+import { getUlbTypeData } from "@/apicalls/panelSetup"
+import { Suspense } from "react"
+import PageContainer from '@/components/layout/page-container';
+
+export default function ULBTypePage() {
+ 
+
+  return (
+       <PageContainer>
+             <div className='flex flex-1 flex-col space-y-2'>
+        <Suspense
+          fallback={
+            <div className="bg-white rounded-lg border shadow-sm p-12 text-center">
+              <div className="animate-pulse">
+                <div className="h-4 bg-gray-200 rounded w-32 mx-auto mb-2"></div>
+                <div className="text-sm text-gray-500">Loading...</div>
+              </div>
+            </div>
+          }
+        >
+          <ULBTypeTable getUlbTypeData={getUlbTypeData} />
+        </Suspense>
+      </div>
+    </PageContainer>
+  )
+}
