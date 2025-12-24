@@ -1,12 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   eslint: {
     // ✅ Don’t block production builds on ESLint errors/warnings
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ["property.ulbharyana.gov.in"], // Add your API host here
+    domains: ["property.ulbharyana.gov.in"],
     remotePatterns: [
       {
         protocol: "http",
@@ -20,8 +18,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname:
-          "property.ulbharyana.gov.in/NDCImages/fdrive/Thumb/037/1G11DBF1/1G11DBF1",
+        hostname: "property.ulbharyana.gov.in",
         pathname: "/**",
       },
     ],
