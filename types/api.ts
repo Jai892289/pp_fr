@@ -8,6 +8,7 @@ export type ApiResponse<T = unknown> = {
   success: boolean;
   error?: string;
 };
+// efrwe
 
 export type ApiError = {
   message: string;
